@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligne du Temps Histoire Musulmane</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #timeline { width: 100%; height: 500px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h2>Ligne du Temps - Histoire Musulmane</h2>
+    <div id="timeline"></div>
+    
+    <script>
+        var container = document.getElementById('timeline');
+        var items = new vis.DataSet([
+            { id: 1, content: 'Réformes sous Abdul Hamid Ier', start: '1774'},
+            { id: 2, content: 'Fondation de Téhéran', start: '1786' },
+            { id: 3, content: 'Réformes de Selîm III', start: '1789' },
+            { id: 4, content: 'Révolte de Muhammad Ali Pacha', start: '1831', end: '1839' },
+            { id: 5, content: 'Début des Tanzimat', start: '1839' },
+            { id: 6, content: 'Traité de Berlin', start: '1878' },
+            { id: 7, content: 'Révolte arabe', start: '1916' },
+            { id: 8, content: 'Déclaration de la République turque', start: '1923' },
+            { id: 9, content: 'Création du Royaume d’Arabie Saoudite', start: '1932' },
+            { id: 10, content: 'Livre Blanc britannique', start: '1939' }
+        ]);
+        
+        var options = { start: '1700', end: '1950', showCurrentTime: false };
+        var timeline = new vis.Timeline(container, items, options);
+    </script>
+</body>
+</html>
